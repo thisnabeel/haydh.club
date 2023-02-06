@@ -73,7 +73,7 @@ Rails.application.configure do
   #   config.logger = ActiveSupport::TaggedLogging.new(logger)
   # end
 
-  config.logger = RemoteSyslogLogger.new('logsN.papertrailapp.com', "7RVGilUlEOQrrLCm3xAT")
+  config.logger = RemoteSyslogLogger.new('http://logs2.papertrailapp.com:14179/', "7RVGilUlEOQrrLCm3xAT")
 
 
   # Do not dump schema after migrations.
