@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20230205113542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "timescaledb"
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string   "name"

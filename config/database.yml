@@ -22,8 +22,15 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: haydh_development
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  schema_search_path: "public, salesforce"
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+  database: <%= ENV['DB_DATABASE'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -79,7 +86,12 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: haydh_production
-  username: haydh
-  password: <%= ENV['HAYDH_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  schema_search_path: "public, salesforce"
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+  database: <%= ENV['DB_DATABASE'] %>
