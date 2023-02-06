@@ -17,7 +17,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
     t.string   "code"
     t.string   "fingerprint"
     t.string   "placeholder_key"
-    t.boolean   "period",                            default: false
+    t.boolean  "period",                            default: false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "provider",                          default: "email",    null: false
